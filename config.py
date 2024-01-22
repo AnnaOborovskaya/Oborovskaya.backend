@@ -3,7 +3,7 @@ import os
 
 class Settings:
     app_name: str = "New API"
-    POSTGRES_DATABASE_URLA: str = "postgresql+asyncpg://postgres:61891@localhost:5432/Shop"
+    POSTGRES_DATABASE_URLA: str = "postgresql://postgres:61891@localhost:5432/system"
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
     POSTGRES_HOST: str
@@ -19,7 +19,7 @@ settings.POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')
 settings.POSTGRES_USER = os.environ.get('POSTGRES_USER')
 settings.POSTGRES_DB = os.environ.get('POSTGRES_DB')
 settings.POSTGRES_HOST = os.environ.get('POSTGRES_HOST')
-settings.POSTGRES_DATABASE_URLA = f"postgresql+asyncpg:" \
+settings.POSTGRES_DATABASE_URLA = f"postgresql:" \
                                   f"//{settings.POSTGRES_USER}:" \
                                   f"{settings.POSTGRES_PASSWORD}" \
                                   f"@{settings.POSTGRES_HOST}:" \
